@@ -6,3 +6,6 @@ I mainly written this for myself to do my voice exercises and make recordings wh
 
 https://drake7707.github.io/audioanalyzer/
 
+## Screenshot
+
+![](https://i.imgur.com/rhwOHfw.png)
