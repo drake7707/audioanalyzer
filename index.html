@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Audio analyzer</title>
+    <link rel='stylesheet' href='main.css' />
+
+</head>
+
+<body>
+    <fieldset id="pnlInput">
+        <label class="title">Input source</label>
+        <br/> Select a file
+        <input type="file" id="file"> or use
+        <button id="mic">Microphone</button>
+        <br/>
+    </fieldset>
+
+    <fieldset>
+        <label>Spectrum analyzer / peak detection</label>
+        <br/>
+        <canvas id="frequency" style="background-color:white;"></canvas>
+
+        <div>
+            Fundamental freq: <span id="highestFreq"></span>
+            <br/>
+        </div>
+    </fieldset>
+    <fieldset id="pnlRecord" style="display:none">
+        <label class="title">Record controls</label>
+        <br/>
+        <button id="btnRecord">Record</button>
+        <div id="recordedFile"></div>
+        <button id="btnDownload" style="display:none">Download recording (.wav)</button>
+    </fieldset>
+    <br/>
+
+    <fieldset>
+        <label class="title">Spectogram</label>
+        <br/>
+        <!--<fieldset>
+            <label>Log scale
+                <input id="chkLogScale" type="checkbox" /> </label>
+        </fieldset>-->
+        <fieldset>
+            <label>Frequency lines:
+                <input type="number" id="txtFreqFrom" value="150">
+            </label>-
+            <label>
+                <input type="number" id="txtFreqTo" value="200">
+            </label>
+            <label>
+                <input id="chkShowPeaks" type="checkbox" />Show peaks</label>
+            <label>
+                <input id="chkShowEnergy" type="checkbox" checked />Show energy</label>
+        </fieldset>
+        <fieldset>
+            <label>Frequency cutoff range:
+                <input type="number" id="txtFreqLowCutoff" value="50">
+            </label>-
+            <label>
+                <input type="number" id="txtFreqHighCutoff" value="700">
+            </label>
+        </fieldset>
+        <fieldset>
+            
+        </fieldset>
+        <div>
+            Highlighted freq: <span id="highlightedFreq"></span>
+            <br/>
+        </div>
+        <div style="position:relative;height:900px">
+            <canvas style="position:absolute;left:0;top:0" id="spectogram"></canvas>
+            <canvas style="position:absolute;left:0;top:0;" id="spectogramLabels"></canvas>
+        </div>
+    </fieldset>
+
+    <script src='main.js'></script>
+    <script src="https://www.webrtc-experiment.com/RecordRTC.js"></script>
+</body>
+
+</html>
